@@ -5,12 +5,12 @@ $Descr B 17000 11000
 encoding utf-8
 Sheet 1 1
 Title "UMDv3"
-Date "2022-01-07"
+Date "2022-01-15"
 Rev "3.0"
-Comp "db Electroniocs"
-Comment1 ""
-Comment2 ""
-Comment3 ""
+Comp "db Electronics"
+Comment1 "https://github.com/db-electronics/UMDv3-kicad"
+Comment2 "Licensed Under CERN OHL v.1.2"
+Comment3 "Copyright 2022 René Richard"
 Comment4 ""
 $EndDescr
 $Comp
@@ -43,23 +43,21 @@ $EndComp
 $Comp
 L db-connectors:10118192-0002LF CON?
 U 1 1 61DA3D7C
-P 1350 6850
-F 0 "CON?" H 1443 7017 50  0000 C CNN
-F 1 "10118192-0002LF" H 1443 6926 50  0000 C CNN
-F 2 "db-smt:USB-10118192-0002" H 2050 7350 60  0001 C CNN
-F 3 "https://cdn.amphenol-icc.com/media/wysiwyg/files/drawing/10118194.pdf" H 3100 7075 60  0001 C CNN
-F 4 "609-5379-1-ND" H 1750 7275 60  0001 C CNN "Digikey"
-F 5 "CONN USB MICRO B RECPT SMT R/A" H 2175 7175 60  0001 C CNN "Description"
-	1    1350 6850
+P 1050 7800
+F 0 "CON?" H 1143 7967 50  0000 C CNN
+F 1 "10118192-0002LF" H 1143 7876 50  0000 C CNN
+F 2 "db-smt:USB-10118192-0002" H 1750 8300 60  0001 C CNN
+F 3 "https://cdn.amphenol-icc.com/media/wysiwyg/files/drawing/10118194.pdf" H 2800 8025 60  0001 C CNN
+F 4 "609-5379-1-ND" H 1450 8225 60  0001 C CNN "Digikey"
+F 5 "CONN USB MICRO B RECPT SMT R/A" H 1875 8125 60  0001 C CNN "Description"
+	1    1050 7800
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	1550 7050 2000 7050
-Wire Wire Line
-	1550 7150 2000 7150
-Text Label 1650 7050 0    50   ~ 0
+	1250 8000 1700 8000
+Text Label 1350 8000 0    50   ~ 0
 USB_D-
-Text Label 1650 7150 0    50   ~ 0
+Text Label 1350 8100 0    50   ~ 0
 USB_D+
 Wire Wire Line
 	5900 7050 6500 7050
@@ -74,9 +72,9 @@ Wire Wire Line
 Wire Wire Line
 	5900 2650 6500 2650
 Text Label 5900 2650 0    50   ~ 0
-SWCLK
+SWCLK-TCLK
 Text Label 5900 2550 0    50   ~ 0
-SWDIO
+SWDIO-TMS
 Wire Wire Line
 	11350 7050 12000 7050
 Wire Wire Line
@@ -154,7 +152,7 @@ Wire Wire Line
 	5900 3850 6500 3850
 Text Label 5900 3850 0    50   ~ 0
 CLOCK_OUT
-Text Label 2400 6800 0    50   ~ 0
+Text Label 1450 7350 0    50   ~ 0
 USB_PU
 Wire Wire Line
 	11350 4350 12000 4350
@@ -301,10 +299,6 @@ SPI2_MISO
 Text Label 5900 4950 0    50   ~ 0
 SPI2_MOSI
 Wire Wire Line
-	5900 5650 6500 5650
-Wire Wire Line
-	5900 5550 6500 5550
-Wire Wire Line
 	5900 5450 6500 5450
 Wire Wire Line
 	5900 5350 6500 5350
@@ -365,127 +359,581 @@ Wire Wire Line
 Text Label 5900 3750 0    50   ~ 0
 TIM1_CH2
 $Comp
-L db-sem:AZ1117CH-3.3TRG1 U?
-U 1 1 61DDC6AE
-P 2450 7700
-F 0 "U?" H 2750 7867 50  0000 C CNN
-F 1 "AZ1117CH-3.3TRG1" H 2750 7776 50  0000 C CNN
-F 2 "db-smt:SOT-223" H 3075 7975 60  0001 C CNN
-F 3 "https://www.diodes.com/assets/Datasheets/AZ1117C.pdf" H 3600 8075 60  0001 C CNN
-F 4 "AZ1117CH-3.3TRG1DICT-ND" H 3150 8150 60  0001 C CNN "Digikey"
-F 5 "IC REG LINEAR 3.3V 800MA SOT223" H 3300 8275 60  0001 C CNN "Description"
-F 6 "2019-03-19" H 2800 8400 60  0001 C CNN "Reviewed"
-	1    2450 7700
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:Vusb #PWR?
 U 1 1 61DE16A1
-P 1800 6550
-F 0 "#PWR?" H 1800 6400 50  0001 C CNN
-F 1 "Vusb" H 1815 6723 50  0000 C CNN
-F 2 "" H 1800 6550 50  0001 C CNN
-F 3 "" H 1800 6550 50  0001 C CNN
-	1    1800 6550
+P 1400 7750
+F 0 "#PWR?" H 1400 7600 50  0001 C CNN
+F 1 "Vusb" H 1415 7923 50  0000 C CNN
+F 2 "" H 1400 7750 50  0001 C CNN
+F 3 "" H 1400 7750 50  0001 C CNN
+	1    1400 7750
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+3V3 #PWR?
 U 1 1 61DE1D87
-P 2500 6450
-F 0 "#PWR?" H 2500 6300 50  0001 C CNN
-F 1 "+3V3" H 2515 6623 50  0000 C CNN
-F 2 "" H 2500 6450 50  0001 C CNN
-F 3 "" H 2500 6450 50  0001 C CNN
-	1    2500 6450
+P 4050 7750
+F 0 "#PWR?" H 4050 7600 50  0001 C CNN
+F 1 "+3V3" H 4065 7923 50  0000 C CNN
+F 2 "" H 4050 7750 50  0001 C CNN
+F 3 "" H 4050 7750 50  0001 C CNN
+	1    4050 7750
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:+5V #PWR?
 U 1 1 61DE24A8
-P 2250 6050
-F 0 "#PWR?" H 2250 5900 50  0001 C CNN
-F 1 "+5V" H 2265 6223 50  0000 C CNN
-F 2 "" H 2250 6050 50  0001 C CNN
-F 3 "" H 2250 6050 50  0001 C CNN
-	1    2250 6050
+P 2550 7750
+F 0 "#PWR?" H 2550 7600 50  0001 C CNN
+F 1 "+5V" H 2565 7923 50  0000 C CNN
+F 2 "" H 2550 7750 50  0001 C CNN
+F 3 "" H 2550 7750 50  0001 C CNN
+	1    2550 7750
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 61DE2DE1
-P 1650 8000
-F 0 "#PWR?" H 1650 7750 50  0001 C CNN
-F 1 "GND" H 1655 7827 50  0000 C CNN
-F 2 "" H 1650 8000 50  0001 C CNN
-F 3 "" H 1650 8000 50  0001 C CNN
-	1    1650 8000
-	1    0    0    -1  
-$EndComp
-$Comp
-L db-electromech:PTS645SM43SMTR92_LFS SW?
-U 1 1 61DE366A
-P 3500 1700
-F 0 "SW?" H 3650 1825 50  0000 C CNN
-F 1 "PTS645SM43SMTR92_LFS" H 3650 1734 50  0000 C CNN
-F 2 "db-smt:PTS645" H 3850 2200 60  0001 C CNN
-F 3 "https://www.ckswitches.com/media/1471/pts645.pdf" H 4750 2100 60  0001 C CNN
-F 4 "CKN9112CT-ND" H 3900 2300 60  0001 C CNN "Digikey"
-F 5 "SWITCH TACTILE SPST-NO 0.05A 12V" H 4350 2000 60  0001 C CNN "Description"
-	1    3500 1700
+P 750 8800
+F 0 "#PWR?" H 750 8550 50  0001 C CNN
+F 1 "GND" H 755 8627 50  0000 C CNN
+F 2 "" H 750 8800 50  0001 C CNN
+F 3 "" H 750 8800 50  0001 C CNN
+	1    750  8800
 	1    0    0    -1  
 $EndComp
 $Comp
 L db-connectors:JTAG-2X10-HDR CON?
 U 1 1 61DE5796
-P 2850 2400
-F 0 "CON?" H 3225 2567 50  0000 C CNN
-F 1 "JTAG-2X10-HDR" H 3225 2476 50  0000 C CNN
-F 2 "db-thparts:HDR2X10-JTAG" H 3350 2850 50  0001 C CNN
-F 3 "http://www.on-shore.com/wp-content/uploads/2018/04/302-SXX1.pdf" H 4250 2750 50  0001 C CNN
-F 4 "ED10524-ND" H 3100 2950 50  0001 C CNN "Digikey"
-F 5 "JTAG 2X10 HEADER" H 3200 3050 50  0001 C CNN "Description"
-F 6 "2019-03-19" H 3100 3150 50  0001 C CNN "Reviewed"
-	1    2850 2400
+P 2350 1650
+F 0 "CON?" H 2725 1817 50  0000 C CNN
+F 1 "JTAG-2X10-HDR" H 2725 1726 50  0000 C CNN
+F 2 "db-thparts:HDR2X10-JTAG" H 2850 2100 50  0001 C CNN
+F 3 "http://www.on-shore.com/wp-content/uploads/2018/04/302-SXX1.pdf" H 3750 2000 50  0001 C CNN
+F 4 "ED10524-ND" H 2600 2200 50  0001 C CNN "Digikey"
+F 5 "JTAG 2X10 HEADER" H 2700 2300 50  0001 C CNN "Description"
+F 6 "2019-03-19" H 2600 2400 50  0001 C CNN "Reviewed"
+	1    2350 1650
 	-1   0    0    -1  
 $EndComp
 $Comp
 L db-passives:R_0603 R?
 U 1 1 61DE655B
-P 3550 8850
-F 0 "R?" H 3628 8896 50  0000 L CNN
-F 1 "10k" H 3628 8805 50  0000 L CNN
-F 2 "db-smt:0603" H 3850 8750 30  0001 C CNN
-F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-AC_51_RoHS_L_8.pdf" H 3650 8850 30  0001 C CNN
-F 4 "311-10KLDCT-ND" H 3800 8825 60  0001 C CNN "Digikey"
-F 5 "RES SMD 10K OHM 1% 1/10W 0603" H 3800 8925 60  0001 C CNN "Description"
-	1    3550 8850
+P 7400 850
+F 0 "R?" H 7478 896 50  0000 L CNN
+F 1 "10k" H 7478 805 50  0000 L CNN
+F 2 "db-smt:0603" H 7700 750 30  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-AC_51_RoHS_L_8.pdf" H 7500 850 30  0001 C CNN
+F 4 "311-10KLDCT-ND" H 7650 825 60  0001 C CNN "Digikey"
+F 5 "RES SMD 10K OHM 1% 1/10W 0603" H 7650 925 60  0001 C CNN "Description"
+	1    7400 850 
 	1    0    0    -1  
 $EndComp
 $Comp
 L db-passives:R_0603 R?
 U 1 1 61DE744B
-P 4300 7800
-F 0 "R?" H 4378 7846 50  0000 L CNN
-F 1 "1.5k" H 4378 7755 50  0000 L CNN
-F 2 "db-smt:0603" H 4600 7700 30  0001 C CNN
-F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-AC_51_RoHS_L_8.pdf" H 4400 7800 30  0001 C CNN
-F 4 "311-1.5KLDCT-ND" H 4550 7775 60  0001 C CNN "Digikey"
-F 5 "RES SMD 1.5K OHM 1% 1/10W 0603" H 4550 7875 60  0001 C CNN "Description"
-	1    4300 7800
+P 1750 7600
+F 0 "R?" H 1828 7646 50  0000 L CNN
+F 1 "1.5k" H 1828 7555 50  0000 L CNN
+F 2 "db-smt:0603" H 2050 7500 30  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-AC_51_RoHS_L_8.pdf" H 1850 7600 30  0001 C CNN
+F 4 "311-1.5KLDCT-ND" H 2000 7575 60  0001 C CNN "Digikey"
+F 5 "RES SMD 1.5K OHM 1% 1/10W 0603" H 2000 7675 60  0001 C CNN "Description"
+	1    1750 7600
 	1    0    0    -1  
 $EndComp
 $Comp
 L db-passives:R_0603 R?
 U 1 1 61DE796E
-P 4750 8700
-F 0 "R?" H 4828 8746 50  0000 L CNN
-F 1 "2.2k" H 4828 8655 50  0000 L CNN
-F 2 "db-smt:0603" H 5050 8600 30  0001 C CNN
-F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-AC_51_RoHS_L_8.pdf" H 4850 8700 30  0001 C CNN
-F 4 "311-2.2KLDCT-ND" H 5000 8675 60  0001 C CNN "Digikey"
-F 5 "RES SMD 2.2K OHM 1% 1/10W 0603" H 5000 8775 60  0001 C CNN "Description"
-	1    4750 8700
+P 5500 5250
+F 0 "R?" H 5578 5296 50  0000 L CNN
+F 1 "2.2k" H 5578 5205 50  0000 L CNN
+F 2 "db-smt:0603" H 5800 5150 30  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-AC_51_RoHS_L_8.pdf" H 5600 5250 30  0001 C CNN
+F 4 "311-2.2KLDCT-ND" H 5750 5225 60  0001 C CNN "Digikey"
+F 5 "RES SMD 2.2K OHM 1% 1/10W 0603" H 5750 5325 60  0001 C CNN "Description"
+	1    5500 5250
 	1    0    0    -1  
 $EndComp
+$Comp
+L db-diodes:BAT160C,115 D?
+U 1 1 61E40C66
+P 2150 7900
+F 0 "D?" H 2200 8050 50  0000 C CNN
+F 1 "BAT160C,115" H 2250 7550 50  0000 C CNN
+F 2 "db-smt:SOT-223" H 2450 8225 60  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/BAT160_SERIES.pdf" H 3450 8400 60  0001 C CNN
+F 4 "1727-4814-1-ND" H 2500 8300 60  0001 C CNN "Digikey"
+F 5 "DIODE ARRAY SCHOTTKY 60V SOT223" H 3000 8125 60  0001 C CNN "Description"
+	1    2150 7900
+	1    0    0    -1  
+$EndComp
+$Comp
+L db-connectors:10118192-0002LF CON?
+U 1 1 61E41F45
+P 1050 9200
+F 0 "CON?" H 1143 9367 50  0000 C CNN
+F 1 "10118192-0002LF" H 1143 9276 50  0000 C CNN
+F 2 "db-smt:USB-10118192-0002" H 1750 9700 60  0001 C CNN
+F 3 "https://cdn.amphenol-icc.com/media/wysiwyg/files/drawing/10118194.pdf" H 2800 9425 60  0001 C CNN
+F 4 "609-5379-1-ND" H 1450 9625 60  0001 C CNN "Digikey"
+F 5 "CONN USB MICRO B RECPT SMT R/A" H 1875 9525 60  0001 C CNN "Description"
+	1    1050 9200
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	750  8700 750  8750
+$Comp
+L power:GND #PWR?
+U 1 1 61E45FB0
+P 750 10200
+F 0 "#PWR?" H 750 9950 50  0001 C CNN
+F 1 "GND" H 755 10027 50  0000 C CNN
+F 2 "" H 750 10200 50  0001 C CNN
+F 3 "" H 750 10200 50  0001 C CNN
+	1    750  10200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	750  10100 750  10150
+Wire Wire Line
+	1250 7900 1400 7900
+Wire Wire Line
+	2050 8100 1950 8100
+Wire Wire Line
+	1950 8100 1950 9300
+Wire Wire Line
+	1950 9300 1250 9300
+Wire Wire Line
+	750  8750 1300 8750
+Wire Wire Line
+	1300 8750 1300 8300
+Wire Wire Line
+	1300 8300 1250 8300
+Connection ~ 750  8750
+Wire Wire Line
+	750  8750 750  8800
+Wire Wire Line
+	750  10150 1300 10150
+Wire Wire Line
+	1300 10150 1300 9700
+Wire Wire Line
+	1300 9700 1250 9700
+Connection ~ 750  10150
+Wire Wire Line
+	750  10150 750  10200
+Wire Wire Line
+	2850 8000 2750 8000
+Wire Wire Line
+	2550 7750 2550 8000
+Connection ~ 2550 8000
+Wire Wire Line
+	2550 8000 2400 8000
+$Comp
+L db-sem:MIC5504-3.3YM5-TR U?
+U 1 1 61E70B76
+P 3050 7900
+F 0 "U?" H 3350 8067 50  0000 C CNN
+F 1 "MIC5504-3.3YM5-TR" H 3350 7976 50  0000 C CNN
+F 2 "db-smt:SC-74A" H 3675 8175 60  0001 C CNN
+F 3 "http://www.microchip.com/mymicrochip/filehandler.aspx?ddocname=en580292" H 4200 8275 60  0001 C CNN
+F 4 "576-4764-1-ND" H 3525 8375 60  0001 C CNN "Digikey"
+F 5 "IC REG LINEAR 3.3V 300MA SOT23-5" H 3900 8475 60  0001 C CNN "Description"
+F 6 "2019-03-19" H 3400 8325 60  0001 C CNN "Reviewed"
+	1    3050 7900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2850 8100 2750 8100
+Wire Wire Line
+	2750 8100 2750 8000
+Connection ~ 2750 8000
+Wire Wire Line
+	2750 8000 2550 8000
+$Comp
+L db-passives:C_0805 C?
+U 1 1 61E75E8F
+P 2550 8350
+F 0 "C?" H 2665 8396 50  0000 L CNN
+F 1 "1uF/16V" H 2665 8305 50  0000 L CNN
+F 2 "db-smt:0805" H 2588 8200 30  0001 C CNN
+F 3 "" H 2575 8450 60  0000 C CNN
+F 4 "445-8829-1-ND" H 2675 8550 60  0001 C CNN "Digikey"
+F 5 "CAP CER 1UF 16V X8R 0805" H 2675 8650 60  0001 C CNN "Description"
+	1    2550 8350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61E881B1
+P 3350 8650
+F 0 "#PWR?" H 3350 8400 50  0001 C CNN
+F 1 "GND" H 3355 8477 50  0000 C CNN
+F 2 "" H 3350 8650 50  0001 C CNN
+F 3 "" H 3350 8650 50  0001 C CNN
+	1    3350 8650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 8550 3350 8600
+Wire Wire Line
+	3350 8600 2550 8600
+Wire Wire Line
+	2550 8600 2550 8500
+Connection ~ 3350 8600
+Wire Wire Line
+	3350 8600 3350 8650
+Wire Wire Line
+	2550 8200 2550 8000
+Wire Wire Line
+	1750 7800 1750 8100
+Wire Wire Line
+	1250 8100 1750 8100
+Wire Wire Line
+	1750 7400 1750 7350
+Wire Wire Line
+	1750 7350 1450 7350
+Wire Wire Line
+	1400 7750 1400 7900
+Connection ~ 1400 7900
+Wire Wire Line
+	1400 7900 2050 7900
+$Comp
+L db-passives:C_0805 C?
+U 1 1 61EAFE96
+P 4050 8350
+F 0 "C?" H 4165 8396 50  0000 L CNN
+F 1 "1uF/16V" H 4165 8305 50  0000 L CNN
+F 2 "db-smt:0805" H 4088 8200 30  0001 C CNN
+F 3 "" H 4075 8450 60  0000 C CNN
+F 4 "445-8829-1-ND" H 4175 8550 60  0001 C CNN "Digikey"
+F 5 "CAP CER 1UF 16V X8R 0805" H 4175 8650 60  0001 C CNN "Description"
+	1    4050 8350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 8600 4050 8600
+Wire Wire Line
+	4050 8600 4050 8500
+Wire Wire Line
+	3850 8000 4050 8000
+Wire Wire Line
+	4050 8000 4050 7750
+Wire Wire Line
+	4050 8200 4050 8000
+Connection ~ 4050 8000
+$Comp
+L db-sem:MCP23008T-E_SO U?
+U 1 1 61EC6ABA
+P 1650 5350
+F 0 "U?" H 1975 5517 50  0000 C CNN
+F 1 "MCP23008T-E_SO" H 1975 5426 50  0000 C CNN
+F 2 "db-smt:SOIC-18" H 2125 6050 60  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21919e.pdf" H 3100 5950 60  0001 C CNN
+F 4 "MCP23008T-E/SOCT-ND" H 2350 5850 60  0001 C CNN "Digikey"
+F 5 "IC I/O EXPANDER I2C 8B 18SOIC" H 2500 5750 60  0001 C CNN "Description"
+	1    1650 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L db-sem:MCP23008T-E_SO U?
+U 2 1 61EC747A
+P 3250 9500
+F 0 "U?" H 3480 9321 50  0000 L CNN
+F 1 "MCP23008T-E_SO" H 3480 9230 50  0000 L CNN
+F 2 "db-smt:SOIC-18" H 3725 10200 60  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21919e.pdf" H 4700 10100 60  0001 C CNN
+F 4 "MCP23008T-E/SOCT-ND" H 3950 10000 60  0001 C CNN "Digikey"
+F 5 "IC I/O EXPANDER I2C 8B 18SOIC" H 4100 9900 60  0001 C CNN "Description"
+	2    3250 9500
+	1    0    0    -1  
+$EndComp
+Text Label 1000 5450 0    50   ~ 0
+I2C1_SCL
+Text Label 1000 5550 0    50   ~ 0
+I2C1_SDA
+Wire Wire Line
+	1000 5550 1450 5550
+Wire Wire Line
+	1000 5450 1450 5450
+$Comp
+L db-passives:R_0603 R?
+U 1 1 61EF1848
+P 5150 5250
+F 0 "R?" H 5228 5296 50  0000 L CNN
+F 1 "2.2k" H 5228 5205 50  0000 L CNN
+F 2 "db-smt:0603" H 5450 5150 30  0001 C CNN
+F 3 "https://www.yageo.com/upload/media/product/productsearch/datasheet/rchip/PYu-AC_51_RoHS_L_8.pdf" H 5250 5250 30  0001 C CNN
+F 4 "311-2.2KLDCT-ND" H 5400 5225 60  0001 C CNN "Digikey"
+F 5 "RES SMD 2.2K OHM 1% 1/10W 0603" H 5400 5325 60  0001 C CNN "Description"
+	1    5150 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 61EF1C45
+P 5150 4950
+F 0 "#PWR?" H 5150 4800 50  0001 C CNN
+F 1 "+3V3" H 5165 5123 50  0000 C CNN
+F 2 "" H 5150 4950 50  0001 C CNN
+F 3 "" H 5150 4950 50  0001 C CNN
+	1    5150 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5150 5550 5150 5450
+Wire Wire Line
+	5150 5550 6500 5550
+Wire Wire Line
+	5500 5450 5500 5650
+Wire Wire Line
+	5500 5650 6500 5650
+Wire Wire Line
+	5150 4950 5150 5000
+Wire Wire Line
+	5150 5000 5500 5000
+Wire Wire Line
+	5500 5000 5500 5050
+Connection ~ 5150 5000
+Wire Wire Line
+	5150 5000 5150 5050
+$Comp
+L power:+3V3 #PWR?
+U 1 1 61F0B5DF
+P 7100 900
+F 0 "#PWR?" H 7100 750 50  0001 C CNN
+F 1 "+3V3" H 7115 1073 50  0000 C CNN
+F 2 "" H 7100 900 50  0001 C CNN
+F 3 "" H 7100 900 50  0001 C CNN
+	1    7100 900 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 2450 5900 2450
+Text Label 5900 2450 0    50   ~ 0
+TRST
+Wire Wire Line
+	6500 2750 5900 2750
+Text Label 5900 2750 0    50   ~ 0
+TDI
+Wire Wire Line
+	6500 2850 5900 2850
+Text Label 5900 2850 0    50   ~ 0
+TDO
+Wire Wire Line
+	2450 1950 3050 1950
+Wire Wire Line
+	2450 2050 3050 2050
+Text Label 2600 2150 0    50   ~ 0
+SWCLK-TCLK
+Text Label 2600 2050 0    50   ~ 0
+SWDIO-TMS
+Wire Wire Line
+	3050 1850 2450 1850
+Text Label 2600 1850 0    50   ~ 0
+TRST
+Wire Wire Line
+	3050 2150 2450 2150
+Text Label 2600 1950 0    50   ~ 0
+TDI
+Wire Wire Line
+	3050 2350 2450 2350
+Text Label 2600 2350 0    50   ~ 0
+TDO
+Wire Wire Line
+	6500 2250 5800 2250
+Text Label 2600 2450 0    50   ~ 0
+~RESET
+$Comp
+L power:GND #PWR?
+U 1 1 61F3EEB7
+P 5100 2350
+F 0 "#PWR?" H 5100 2100 50  0001 C CNN
+F 1 "GND" H 5105 2177 50  0000 C CNN
+F 2 "" H 5100 2350 50  0001 C CNN
+F 3 "" H 5100 2350 50  0001 C CNN
+	1    5100 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5700 1800 5800 1800
+Wire Wire Line
+	5800 1800 5800 1900
+Connection ~ 5800 2250
+Wire Wire Line
+	5800 2250 5600 2250
+Wire Wire Line
+	5700 1900 5800 1900
+Connection ~ 5800 1900
+Wire Wire Line
+	5800 1900 5800 2250
+Wire Wire Line
+	5300 2250 5100 2250
+Wire Wire Line
+	5100 2250 5100 2350
+Wire Wire Line
+	5100 2250 5100 1900
+Connection ~ 5100 2250
+Connection ~ 5100 1900
+Wire Wire Line
+	5100 1900 5100 1800
+Wire Wire Line
+	2450 2450 3050 2450
+Text Label 5900 2250 0    50   ~ 0
+~RESET
+Wire Wire Line
+	5200 1900 5100 1900
+Wire Wire Line
+	5100 1800 5200 1800
+$Comp
+L db-electromech:PTS645SM43SMTR92_LFS SW?
+U 1 1 61DE366A
+P 5300 1700
+F 0 "SW?" H 5450 1825 50  0000 C CNN
+F 1 "PTS645SM43SMTR92_LFS" H 5450 1734 50  0000 C CNN
+F 2 "db-smt:PTS645" H 5650 2200 60  0001 C CNN
+F 3 "https://www.ckswitches.com/media/1471/pts645.pdf" H 6550 2100 60  0001 C CNN
+F 4 "CKN9112CT-ND" H 5700 2300 60  0001 C CNN "Digikey"
+F 5 "SWITCH TACTILE SPST-NO 0.05A 12V" H 6150 2000 60  0001 C CNN "Description"
+	1    5300 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L db-passives:C_0603 C?
+U 1 1 61F3D20B
+P 5450 2250
+F 0 "C?" V 5600 2150 50  0000 C CNN
+F 1 "0.1uF/50V" V 5700 2300 50  0000 C CNN
+F 2 "db-smt:0603" H 5950 2150 30  0001 C CNN
+F 3 "" H 5475 2350 60  0001 C CNN
+F 4 "1276-CL10B104KB8NNNLCT-ND" H 5875 2225 60  0001 C CNN "Digikey"
+F 5 "CAP CER 0.1UF 50V X7R 0603" H 5875 2325 60  0001 C CNN "Description"
+	1    5450 2250
+	0    1    1    0   
+$EndComp
+$Comp
+L db-passives:C_0603 C?
+U 1 1 61F81C72
+P 1250 2000
+F 0 "C?" V 1400 1900 50  0000 C CNN
+F 1 "0.1uF/50V" V 1500 2050 50  0000 C CNN
+F 2 "db-smt:0603" H 1750 1900 30  0001 C CNN
+F 3 "" H 1275 2100 60  0001 C CNN
+F 4 "1276-CL10B104KB8NNNLCT-ND" H 1675 1975 60  0001 C CNN "Digikey"
+F 5 "CAP CER 0.1UF 50V X7R 0603" H 1675 2075 60  0001 C CNN "Description"
+	1    1250 2000
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61F82857
+P 1250 2750
+F 0 "#PWR?" H 1250 2500 50  0001 C CNN
+F 1 "GND" H 1255 2577 50  0000 C CNN
+F 2 "" H 1250 2750 50  0001 C CNN
+F 3 "" H 1250 2750 50  0001 C CNN
+	1    1250 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1250 2150 1250 2250
+Wire Wire Line
+	1250 1850 1250 1750
+Wire Wire Line
+	1250 1750 1500 1750
+Wire Wire Line
+	1250 1750 1250 1400
+Wire Wire Line
+	1250 1400 2550 1400
+Wire Wire Line
+	2550 1400 2550 1750
+Wire Wire Line
+	2550 1750 2450 1750
+Connection ~ 1250 1750
+Wire Wire Line
+	1500 2650 1250 2650
+Connection ~ 1250 2650
+Wire Wire Line
+	1250 2650 1250 2750
+Wire Wire Line
+	1250 2550 1500 2550
+Connection ~ 1250 2550
+Wire Wire Line
+	1250 2550 1250 2650
+Wire Wire Line
+	1250 2450 1500 2450
+Connection ~ 1250 2450
+Wire Wire Line
+	1250 2450 1250 2550
+Wire Wire Line
+	1500 2350 1250 2350
+Connection ~ 1250 2350
+Wire Wire Line
+	1250 2350 1250 2450
+Wire Wire Line
+	1500 2250 1400 2250
+Connection ~ 1250 2250
+Wire Wire Line
+	1250 2250 1250 2350
+Wire Wire Line
+	1500 1850 1400 1850
+Wire Wire Line
+	1400 1850 1400 1950
+Connection ~ 1400 2250
+Wire Wire Line
+	1400 2250 1250 2250
+Wire Wire Line
+	1500 2150 1400 2150
+Connection ~ 1400 2150
+Wire Wire Line
+	1400 2150 1400 2250
+Wire Wire Line
+	1500 2050 1400 2050
+Connection ~ 1400 2050
+Wire Wire Line
+	1400 2050 1400 2150
+Wire Wire Line
+	1500 1950 1400 1950
+Connection ~ 1400 1950
+Wire Wire Line
+	1400 1950 1400 2050
+$Comp
+L power:+3V3 #PWR?
+U 1 1 61FF4A11
+P 1250 1350
+F 0 "#PWR?" H 1250 1200 50  0001 C CNN
+F 1 "+3V3" H 1265 1523 50  0000 C CNN
+F 2 "" H 1250 1350 50  0001 C CNN
+F 3 "" H 1250 1350 50  0001 C CNN
+	1    1250 1350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1250 1400 1250 1350
+Connection ~ 1250 1400
+$Comp
+L power:+3V3 #PWR?
+U 1 1 62000C5E
+P 1100 5750
+F 0 "#PWR?" H 1100 5600 50  0001 C CNN
+F 1 "+3V3" H 1115 5923 50  0000 C CNN
+F 2 "" H 1100 5750 50  0001 C CNN
+F 3 "" H 1100 5750 50  0001 C CNN
+	1    1100 5750
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1450 5750 1350 5750
+Wire Wire Line
+	1450 5850 1350 5850
+Wire Wire Line
+	1350 5850 1350 5750
+Connection ~ 1350 5750
+Wire Wire Line
+	1350 5750 1100 5750
+Wire Wire Line
+	1450 5950 1350 5950
+Wire Wire Line
+	1350 5950 1350 5850
+Connection ~ 1350 5850
 $EndSCHEMATC
