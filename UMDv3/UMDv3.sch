@@ -1836,7 +1836,7 @@ Wire Wire Line
 Text Label 14450 4300 0    50   ~ 0
 A1
 Text Label 14450 3600 0    50   ~ 0
-D0
+D4
 Wire Wire Line
 	14450 4500 14950 4500
 Text Label 14450 4500 0    50   ~ 0
@@ -2211,9 +2211,9 @@ F 5 "CONN HEADER 3 POS 2.54" H 1325 4075 60  0001 C CNN "Description"
 	1    1000 3700
 	-1   0    0    1   
 $EndComp
-Text Label 1300 3550 0    50   ~ 0
-USART3_TX
 Text Label 1300 3450 0    50   ~ 0
+USART3_TX
+Text Label 1300 3550 0    50   ~ 0
 USART3_RX
 Wire Wire Line
 	1200 3550 1800 3550
