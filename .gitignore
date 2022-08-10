@@ -30,3 +30,6 @@ sym-lib-table
 # local output folders
 gerbers/
 board/
+
+# backup folder
+*-backups/
