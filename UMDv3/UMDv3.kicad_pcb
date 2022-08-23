@@ -59,7 +59,7 @@
       (psnegative false)
       (psa4output false)
       (plotreference true)
-      (plotvalue true)
+      (plotvalue false)
       (plotinvisibletext false)
       (sketchpadsonfab false)
       (subtractmaskfromsilk false)
@@ -67,7 +67,7 @@
       (mirror false)
       (drillshape 0)
       (scaleselection 1)
-      (outputdirectory "gerbers/")
+      (outputdirectory "gerbers/3.0")
     )
   )
 
