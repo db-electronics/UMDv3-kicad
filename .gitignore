@@ -27,9 +27,5 @@ sym-lib-table
 # Exported BOM files
 *.xml
 
-# local output folders
-gerbers/
-board/
-
 # backup folder
 *-backups/
