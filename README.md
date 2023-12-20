@@ -10,7 +10,9 @@ Each cartridge adapter has an MCP23008 on the I2C bus which identifies the conso
 - 0x00 No Adapter / Reserved
 - 0x01 Sega Genesis
 - 0x02 Sega Master System
-- 0x03 Gameboy Advance
+- 0x03
+- 0x04 Gameboy Advance
+- 0x05 Gameboy / Gameboy Color
 
 # Dependencies
 ## Parts Libraries
