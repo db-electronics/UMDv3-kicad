@@ -15,7 +15,6 @@ _autosave-*
 *-save.kicad_pcb
 *.sch-bak
 fp-info-cache
-sym-lib-table
 *.lck
 
 # Netlist files (exported from Eeschema)
@@ -28,5 +27,8 @@ sym-lib-table
 # Exported BOM files
 *.xml
 
-# backup folder
+# local output folders
 *-backups/
+
+# zipped files
+*.zip
